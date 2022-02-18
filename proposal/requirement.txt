@@ -1,0 +1,31 @@
+Create a python script for document layout analysis and extraction
+Convert pdf documents in a folder to png images with 95dpi (documentname _pagenumber.png)
+Run yolov5s (small) pretrained object detection model in tensorflow over the images
+Yolov5s_name_name.pt weights model will be taken from a user specified directory
+Extract the recognized objects inside the bounding box above a user defined confidence threshold (0.1) as images in native resolution as png
+Save the images in a new directory within the document directory with the name: detectionconfidence_imagenumber_documentname_pagenumber.png
+Create a richly annotated python script that is easy to read and run for a novice
+Make variables for dpi values (pdf2image library)
+
+Install poppler on windows
+ go to 'http://blog.alivate.com.au/poppler-windows/'
+ download latest version
+ extract into C:\programm files
+ add to PATH:
+  - click on windows icon in task bar
+  - search for 'Edit the system environment variables' and press enter
+  - click on 'Environment Variables...'
+  - under 'System variables' look for 'PATH' and double clock on it
+  - press new and type 'C:\Program Files\[insert poppler folder]\bin'
+  - click 'OK'
+ You're done!
+ (You may have to restart the terminal if you are using poppler in terminal)
+
+
+how to add user defined dataset in 1000pdf
+it is freeware MIT license if you want you can use it
+
+Important is following as
+model = torch.hub.load('yolov5', 'custom', path=weight_path, source='local')
+
+first git clone yolov5s and weight_path is user defined weight 
